@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <main>
       <Navbar />
+      <OpeningBannerSection />
       <Container>
-        <OpeningBannerSection />
         <AboutSection />
         <DestinationsSection />
         <FootagesSection />
