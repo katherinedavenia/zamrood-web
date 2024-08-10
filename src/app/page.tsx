@@ -1,4 +1,3 @@
-import { Container } from "~/components/Container";
 import { Footer } from "~/components/Footer";
 import { Navbar } from "~/components/Navbar";
 import { AboutSection } from "~/containers/AboutSection";
@@ -11,13 +10,23 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-      <OpeningBannerSection />
-      <Container>
-        <AboutSection />
-        <DestinationsSection />
-        <FootagesSection />
-        <ArticlesSection />
-      </Container>
+      <div className="min-h-screen max-w-screen overflow-hidden">
+        <section id="home">
+          <OpeningBannerSection />
+        </section>
+        <section id="customize-your-trip">
+          <AboutSection />
+        </section>
+        <section id="destinations">
+          <DestinationsSection />
+        </section>
+        <section id="footages">
+          <FootagesSection />
+        </section>
+        <section id="articles">
+          <ArticlesSection />
+        </section>
+      </div>
       <Footer />
     </main>
   );

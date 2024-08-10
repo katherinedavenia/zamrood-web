@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import ReactQueryProvider from "./ReactQueryProvider";
 import Favicon from "/public/favicon.ico";
+import { Albert_Sans } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const albertSans = Albert_Sans({
+  subsets: ["latin"],
+  variable: "--font-albert-sans",
+});
 
 export const metadata: Metadata = {
   title: "Zamrood by Pandooin",
@@ -34,7 +37,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={albertSans.className}>
         <ReactQueryProvider>{children}</ReactQueryProvider>
       </body>
     </html>

@@ -1,61 +1,100 @@
+"use client";
 import Image from "next/image";
-
-const tempArticles = [
-  {
-    id: "f7d9313e-97b5-4fb1-bab9-56fbbdeea88d",
-    slug: "best-places-dive-indonesia",
-    title: "7 Best Places to Dive in Indonesia: From Bali to Wakatobi",
-    summary:
-      "Indonesia offers a variety of amazing diving sites and beautiful underwater views, including Bali, Wakatobi, Raja Ampat, Komodo, Bunaken, Flores, and Menjangan Island, which are considered the top seven places for diving in Indonesia.",
-    featured_image:
-      "https://images.unsplash.com/photo-1494005612480-90f50fd9376f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MjkwNzV8MHwxfHNlYXJjaHwxfHxkaXZpbmclMjBpbmRvbmVzaWF8ZW58MHx8fHwxNjgzMjYwMTYx&ixlib=rb-4.0.3&q=80&w=1080",
-    featured_image_caption: "Photo by Andres Abogabir on Unsplash",
-    read_time: "0 mins baca",
-  },
-  {
-    id: "c2ec58f2-a2f8-42b4-a41d-0d25875ad514",
-    slug: "best-time-visit-indonesia-weather-seasons",
-    title:
-      "The Best Time to Visit Indonesia: A Guide to the Country's Weather and Seasons",
-    summary:
-      "Indonesia is a country with incredible natural beauty. However, the weather and seasons in Indonesia can affect your holiday experience there. By knowing the best time to visit Indonesia and checking the weather forecast, you can plan an optimal and personalized vacation according to your own preferences.",
-    featured_image:
-      "https://images.unsplash.com/photo-1646432581107-06cd4333cfde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MjkwNzV8MHwxfHNlYXJjaHw3fHxmb3Jlc3QlMjBrYWxpbWFudGFufGVufDB8fHx8MTY4MzI2ODcxOA&ixlib=rb-4.0.3&q=80&w=1080",
-    featured_image_caption: "Photo by Barkah Wibowo on Unsplash",
-    read_time: "0 mins baca",
-  },
-];
+import Link from "next/link";
+import { ArticleCardLoader } from "~/components/ArticleCardLoader";
+import { Container } from "~/components/Container";
+import { useGetArticles } from "~/hooks/useGetArticles";
 
 export const ArticlesSection = () => {
+  const { data: articles, isLoading, error } = useGetArticles();
+
   return (
-    <div>
-      <div>
-        <Image src="/temp.png" alt="title" width={10} height={10} />
-        <p>Want to see other destinations? Check us out at our website</p>
+    <Container>
+      <div className="py-20">
+        <div
+          className="h-auto sm:h-[100px] flex flex-col sm:flex-row justify-center sm:justify-between items-center py-5 px-5 lg:px-7 text-white mb-14"
+          style={{
+            backgroundImage: `url(${"/landscape.png"})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
+        >
+          <img
+            src="/zamrood-logo-white.png"
+            alt="logo"
+            className="h-12 sm:h-full w-auto mb-1 sm:mb-0"
+          />
+          <div className="flex flex-col justify-center items-center sm:items-end">
+            <p className="text-sm lg:text-base font-light text-center leading-tight mb-1 sm:mb-0">
+              Want to see other destinations? Check us out at our website
+            </p>
+            <Link href="https://pandooin.com/id" target="_blank">
+              <div className="flex flex-row justify-center items-center cursor-pointer">
+                <p className="text-base lg:text-lg font-semibold underline mr-2">
+                  pandooin.com
+                </p>
+                <Image
+                  src="/link-arrow.svg"
+                  alt="arrow"
+                  width={10}
+                  height={10}
+                />
+              </div>
+            </Link>
+          </div>
+        </div>
         <div>
-          <p>pandooin.com</p>
-          <p>icon</p>
+          <p
+            className="text-primary text-[28px] sm:text-3xl font-bold leading-tight mb-1"
+            style={{ fontFamily: "Unbounded" }}
+          >
+            Articles
+          </p>
+          <p className="text-primary font-light text-xl leading-tight mb-5">
+            Our curated writings, offering something for every reader.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-4 sm:items-stretch gap-6">
+          {isLoading ? (
+            <ArticleCardLoader />
+          ) : !articles || error ? (
+            <div className="text-base font-light py-4">No data available</div>
+          ) : (
+            articles.data.map(
+              (
+                { id, slug, title, featured_image, featured_image_caption },
+                index
+              ) => (
+                <div
+                  key={id}
+                  className={`${
+                    index === 0 && "sm:row-span-2 sm:col-span-2"
+                  } h-full`}
+                >
+                  <Link
+                    href={`https://pandooin.com/blog/article/${slug}`}
+                    target="_blank"
+                  >
+                    <div className="h-full flex flex-col cursor-pointer">
+                      <img
+                        src={featured_image}
+                        alt={featured_image_caption}
+                        className="h-[240px] sm:h-full w-full object-cover grayscale hover:grayscale-0 transition duration-200 ease-in-out"
+                      />
+                      <div className="p-4 bg-primary">
+                        <p className="text-sm lg:text-base font-semibold text-white leading-tight line-clamp-2">
+                          {title}
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              )
+            )
+          )}
         </div>
       </div>
-      <div>
-        <p>Articles</p>
-        <p>Our curated writings, offering something for every reader.</p>
-      </div>
-      <div>
-        {tempArticles.map(
-          ({ id, title, featured_image, featured_image_caption }) => (
-            <div key={id}>
-              <Image
-                src={featured_image}
-                alt={featured_image_caption}
-                width={10}
-                height={10}
-              />
-              <p>{title}</p>
-            </div>
-          )
-        )}
-      </div>
-    </div>
+    </Container>
   );
 };
