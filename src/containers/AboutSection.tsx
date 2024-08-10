@@ -8,7 +8,7 @@ export const AboutSection = () => {
       <div className="flex flex-col justify-center items-center pt-20 pb-10">
         <div className="flex flex-col items-center justify-center mb-10 sm:mb-14">
           <img
-            src="/beyond-premium.png"
+            src="/beyond-premium.webp"
             alt="beyond-premium"
             className="h-auto w-[380px] pointer-events-none"
           />
@@ -41,7 +41,7 @@ export const AboutSection = () => {
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center xl:px-[10vw] pb-20">
           <img
-            src="/rectangle.png"
+            src="/rectangle.webp"
             alt="discover-tailored-experiences"
             className="h-auto sm:w-[270px] lg:w-[300px]"
           />

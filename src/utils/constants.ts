@@ -47,18 +47,18 @@ export const services = [
     id: 1,
     title: "Personal Itineraries",
     desc: "Our premium travel services offer tailor-made itineraries crafted to suit your unique preferences and desires.",
-    src: "/services-1.png",
+    src: "/services-1.webp",
   },
   {
     id: 2,
     title: "Exclusive Experiences",
     desc: "From private charters to behind-the-scenes tours, we offer access to unique opportunities that are designed to elevate your trip to the next level.",
-    src: "/services-2.png",
+    src: "/services-2.webp",
   },
   {
     id: 3,
     title: "Best Facilities",
     desc: "Experience the epitome of with our premium facility, designed to provide an unparalleled level of comfort and indulgence.",
-    src: "/services-3.png",
+    src: "/services-3.webp",
   },
 ];

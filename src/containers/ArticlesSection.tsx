@@ -14,7 +14,7 @@ export const ArticlesSection = () => {
         <div
           className="h-auto sm:h-[100px] flex flex-col sm:flex-row justify-center sm:justify-between items-center py-5 px-5 lg:px-7 text-white mb-14"
           style={{
-            backgroundImage: `url(${"/landscape.png"})`,
+            backgroundImage: `url(${"/landscape.webp"})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",

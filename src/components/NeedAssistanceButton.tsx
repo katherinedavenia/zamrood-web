@@ -10,7 +10,7 @@ export const NeedAssistanceButton: React.FC<{
     <button
       className={`text-base ${
         darkMode ? "border-white text-white" : "border-black text-black"
-      } border border-2 rounded-full px-6 py-2 w-full`}
+      } border border-2 rounded-full px-6 py-2 w-full hover:bg-primary`}
     >
       Need Assistance?
     </button>

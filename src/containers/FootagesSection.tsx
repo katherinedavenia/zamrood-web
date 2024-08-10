@@ -4,32 +4,32 @@ import { PhotoCarousel } from "~/components/PhotoCarousel";
 const images = [
   {
     id: 1,
-    src: "/footages-1.png",
+    src: "/footages-1.webp",
     alt: "footages-1",
   },
   {
     id: 2,
-    src: "/footages-2.png",
+    src: "/footages-2.webp",
     alt: "footages-2",
   },
   {
     id: 3,
-    src: "/footages-3.png",
+    src: "/footages-3.webp",
     alt: "footages-3",
   },
   {
     id: 4,
-    src: "/footages-4.png",
+    src: "/footages-4.webp",
     alt: "footages-4",
   },
   {
     id: 5,
-    src: "/footages-5.png",
+    src: "/footages-5.webp",
     alt: "footages-5",
   },
   {
     id: 6,
-    src: "/footages-6.png",
+    src: "/footages-6.webp",
     alt: "footages-6",
   },
 ];
@@ -40,7 +40,7 @@ export const FootagesSection = () => {
       <Container>
         <div className="mb-6">
           <img
-            src="/luxury-footages.png"
+            src="/luxury-footages.webp"
             alt="luxury-footages"
             className="w-full sm:w-[380px] h-auto pointer-events-none"
           />
