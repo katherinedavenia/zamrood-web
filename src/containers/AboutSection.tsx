@@ -60,7 +60,7 @@ export const AboutSection = () => {
               href="https://pandooin.com/id/tailor-made/create"
               target="_blank"
             >
-              <button className="w-full sm:w-fit bg-secondary rounded-full text-white font-medium text-base w-fit py-2 px-5 hover:opacity-90 transition duration-300 ease-in-out">
+              <button className="w-full sm:w-fit bg-secondary rounded-full text-white font-medium text-base w-fit py-2 px-5 hover:bg-primary">
                 Customize Your Trip
               </button>
             </Link>
