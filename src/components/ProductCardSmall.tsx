@@ -38,7 +38,9 @@ export const ProductCardSmall: React.FC<{
         >
           {itineraryName}
         </p>
-        <p className="text-sm font-medium">Organized by {partnerName}</p>
+        {partnerName && (
+          <p className="text-sm font-medium">Organized by {partnerName}</p>
+        )}
       </Link>
       <div>
         <div className="mb-3">

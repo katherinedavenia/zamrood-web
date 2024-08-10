@@ -45,7 +45,7 @@ export const AboutSection = () => {
             alt="discover-tailored-experiences"
             className="h-auto sm:w-[270px] lg:w-[300px]"
           />
-          <div className="flex flex-col justify-center items-center sm:items-start pl-6">
+          <div className="flex flex-col justify-center items-center sm:items-start sm:pl-6">
             <p
               className="text-secondary text-[26px] font-bold leading-tight mb-2 text-center sm:text-start"
               style={{ fontFamily: "Unbounded" }}

@@ -57,9 +57,11 @@ export const ProductCard: React.FC<{
             >
               {itineraryName}
             </p>
-            <p className="text-base font-medium mb-5">
-              Organized by {partnerName}
-            </p>
+            {partnerName && (
+              <p className="text-base font-medium mb-5">
+                Organized by {partnerName}
+              </p>
+            )}
             <p className="text-sm font-light leading-snug line-clamp-5 xl:line-clamp-6 mb-6">
               {itineraryShortDescription}
             </p>
